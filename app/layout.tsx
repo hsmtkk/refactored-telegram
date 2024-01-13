@@ -1,5 +1,7 @@
 import { Providers } from "./providers";
 import './globals.css'
+import Header from "@/app/components/header"
+import Footer from "@/app/components/footer"
 
 export const metadata = {
   title: 'Next.js',
@@ -11,7 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className='dark'>
       <body>
         <Providers>
+          <Header />
           {children}
+          <Footer />
         </Providers>
       </body>
     </html>

@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import matter from "gray-matter"
 import { Link } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
 const getAllBlogs = async () => {
   const files = fs.readdirSync(path.join("data"))
@@ -31,6 +32,7 @@ const Blog = async () => {
           <p>{blog.fontmatter.excerpt}</p>
           <p>{blog.fontmatter.date}</p>
           <Link href={`/blog/${blog.slug}`}>Read More</Link>
+          <Image src={blog.fontmatter.image} alt="card-image" width={300} />
         </div>
       )}
     </div>
